@@ -49,6 +49,7 @@
 
 # p27指練習
 # 入力値に等しいroot**pwdを求める
+# done
 numX = int(input('Input 1 number: '))
 root = 1
 pwr = 1
