@@ -50,25 +50,74 @@
 # p27指練習
 # 入力値に等しいroot**pwdを求める
 # done
-numX = int(input('Input 1 number: '))
-root = 1
-pwr = 1
-while pwr < 6:
-    if numX == root ** pwr:
-        break
-    else:
-        # if numX < root ** pwr:
-        #     pwr += 1
-        # else:
-        #     root += 1
-        pwr += 1
-        count = 1
-        while numX >= count ** pwr:
-            count += 1
-            if numX == count ** pwr:
-                root = count
+# numX = int(input('Input 1 number: '))
+# root = 1
+# pwr = 1
+# while pwr < 6:
+#     if numX == root ** pwr:
+#         break
+#     else:
+#         pwr += 1
+#         count = 1
+#         while numX >= count ** pwr:
+#             count += 1
+#             if numX == count ** pwr:
+#                 root = count
+#
+# if numX == root ** pwr:
+#     print('Input number: ' + str(numX) + ' root: ' + str(root) + ' pwr: ' + str(pwr))
+# else:
+#     print('There is no such pair')
 
-if numX == root ** pwr:
-    print('Input number: ' + str(numX) + ' root: ' + str(root) + ' pwr: ' + str(pwr))
+# p29指練習
+# 小数を含む文字列をカンマで分け、その合計数を求める
+# done
+# num = "1.23,2.4,3.123"
+# total = 0
+# array = num.split(",")
+# for number in array:
+#     total += float(number)
+# print(total)
+
+# p33指練習
+# コード3.4においてx=25をx=-25に置き換えた場合、なにが起こるか？
+# while条件文が必ずtrueとなり無限ループに陥る
+# x = 25
+# epsilon = 0.01
+# numGuesses = 0
+# low = 0.0
+# high = max(1.0, x)
+# ans = (high + low) / 2.0
+# while abs(ans ** 2 - x) >= epsilon:
+#     print('low =', low, 'high =', high, 'ans =', ans)
+#     numGuesses += 1
+#     if ans ** 2 < x:
+#         low = ans
+#     else:
+#         high = ans
+#     ans = (high + low) / 2.0
+# print('numGuesses =', numGuesses)
+# print(ans, 'is close to square root of', x)
+
+# p33指練習
+# コード3.4を正負両方の立方根の近似を見つけられるよう修正する
+x = -125
+n = 3
+if x < 0:
+    low = min(1.0, x)
 else:
-    print('There is no such pair')
+    low = 0.0
+epsilon = 0.01
+numGuesses = 0
+high = max(1.0, x)
+ans = (high + low) / 2.0
+while abs(ans ** n - x) >= epsilon:
+    print('low =', low, 'high =', high, 'ans =', ans)
+    numGuesses += 1
+    if ans ** n < x:
+        low = ans
+    else:
+        high = ans
+    ans = (high + low) / 2.0
+print('numGuesses =', numGuesses)
+print(ans, 'is close to', n, 'root of', x)
