@@ -12,7 +12,7 @@ def isIn(str1, str2):
     else:
         return False
 
-
+# 引数の順番が関数の判定に依存しないことを確認する
 if __name__ == '__main__':
     print(isIn('testabc', 'test'))
     print(isIn('intro', 'programmingintro'))
